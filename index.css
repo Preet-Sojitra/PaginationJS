@@ -1,0 +1,105 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #aed5e1;
+  --title-color: #000101;
+  --action-color: #7f4b9c;
+  --btn-text: #ffffff;
+  --btn-color: #d41d29;
+  --active-color: #562f6c;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--title-color);
+}
+
+section > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: none;
+}
+
+.mainPage {
+  display: flex;
+}
+
+.visible {
+  display: flex;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  position: absolute;
+  height: auto;
+  bottom: 20px;
+  z-index: 9999;
+}
+
+.buttonContainer button {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  margin: 0 10px;
+  background-color: var(--action-color);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.buttonContainer .active {
+  background-color: var(--active-color);
+}
+
+.allButtons {
+  margin: 0 -3px;
+  width: 240px;
+  overflow: hidden;
+}
+
+.allButtons > div {
+  display: flex;
+  width: fit-content;
+}
+
+.left svg,
+.right svg {
+  fill: var(--btn-color);
+  width: 40px;
+  height: 40px;
+  margin-top: 1px;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.left svg:hover,
+.right svg:hover {
+  transform: scale(1.2);
+}
+
+.left {
+  display: none;
+}
+
+@media only screen and (max-width: 400px) {
+  .title {
+    font-size: 4rem;
+  }
+}
